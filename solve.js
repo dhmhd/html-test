@@ -1,7 +1,5 @@
 const fs = require("fs")
 
-let lines = fs.readFileSync("test.html").toString().split("\n");
-
 
 let maxMemory = 0;
 process.nextTick(() => {
@@ -115,8 +113,14 @@ printResult(solve(["<a>", "<a>", "<a>", "</a>", "<e>", "</e>", "</a>", "<c>", "<
 
 
 console.log("\nLarge file test");
+console.time("read file");
+let lines = fs.readFileSync("test.html").toString().split("\n");
+// Remove empty line at the end of input file
+lines = lines.filter(s => s)
+console.timeEnd("read file");
+
 console.log(lines.length);
-lines.splice(112834, 1);
+lines.splice(112835, 1);
 console.log(lines.length);
 
 console.time("solve");
