@@ -1,3 +1,5 @@
+const fs = require("fs")
+
 let tagsList = ["a", "b", "c", "d", "e", "f"];
 let fileName = "test.html";
 let tagChildsMax = 10;
