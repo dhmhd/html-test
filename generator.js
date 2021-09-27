@@ -43,3 +43,4 @@ function generateHTML() {
 
 fs.writeFileSync(fileName, "");
 generateHTML();
+console.log("done");
